@@ -3,15 +3,23 @@
     font-family: Quicksand-Regular; 
     src: url('ui/font/Quicksand-Regular.otf');
 }
-address, p, li {
+address, p, li, dt, dd {
     line-height:1.35;
     margin:0.5em 0; 
+    text-align:justify;
+}
+dt {
+    font-weight:bold;
 }
 p.center {
     text-align:center;
 }
 form p {
     text-align:center;
+}
+hr {
+    border:1px solid #eee;
+    margin:1em 10px;
 }
 input, select {
     border:1px solid #eee;
@@ -149,9 +157,46 @@ main > section, main > table, main > ul, main > article, main > div {
     margin-top:20px;
 }
 main figure {
-    border:1px solid #eee;
+    background-color:#f6f6f6;
+    border:1px solid #f6f6f6;
     margin:10px;
     padding:1px;
+}
+main figure.right {
+    float:right;
+    margin-right:0;
+    width:301px;
+}
+main figure.left {
+    float:left;
+    margin-left:0;
+    width:301px;
+}
+main figure img {
+    width:100%;
+}
+main figure figcaption {
+    color:#444;
+    font-size:0.75em;
+    margin:1px 2px 3px 2px;
+    text-align:center;
+}
+main nav ul {
+    list-style-type:square;
+    padding:0;
+}
+main nav ul li {
+    float:left;
+    margin:0.25em 0 0.25em 40px;
+    width:255px;
+}
+main nav ul:after {
+    clear: left;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
 }
 header>h1, header>h2, header>h3 {
     display:inline;
