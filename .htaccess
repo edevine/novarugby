@@ -6,12 +6,9 @@ AddHandler php5-script .html .php .rss
 
 DirectoryIndex news.html
 
-<FilesMatch "^_|\.php$|\.sql$|\.md$">
-    Order allow,deny
-    Deny from all
-    Satisfy All
-</FilesMatch>
-
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*[a-z])$ $1.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z/-]*)$ $1.html [L]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^_|\.php$|\.sql$|\.md$ . [R=404,L]
