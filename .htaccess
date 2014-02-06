@@ -1,9 +1,17 @@
 php_value short_open_tag 1
-AddType application/x-httpd-php .html .php
+php_value auto_prepend_file ./_header.php
+php_value auto_append_file ./_footer.php
 
-DirectoryIndex main.php
+AddHandler php5-script .html .php .rss
+
+DirectoryIndex news.html
+
+<FilesMatch "^_|\.php$|\.sql$|\.md$">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
 
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . main.php
+RewriteRule ^(.*[a-z])$ $1.html
