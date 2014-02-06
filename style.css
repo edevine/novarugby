@@ -153,7 +153,7 @@ main figure {
     margin:10px;
     padding:1px;
 }
-header>h1, header>h2, header>h3, header>h4 {
+header>h1, header>h2, header>h3 {
     display:inline;
 }
 h1, h2, h3, h4 {
@@ -195,31 +195,40 @@ a:hover {
 
 article.news-item {
     background-color:#f6f6f6;
-    height:180px
+    height:174px
 }
 article.news-item figure {
     border:0;
     float:left;
-    height:180px;
+    height:174px;
     margin:0 10px 0 0;
     overflow:hidden;
     text-align:center;
-    width:320px;
+    width:310px;
 }
 article.news-item figure img {
-    height:180px;
+    height:174px;
 }
 article.news-item time {
     color:#444;
+    float:right;
     font-size:14px;
     display:block;
-    margin:0 10px 5px 10px;
+}
+article.news-item header {
+    margin:0 10px;
     padding-top:5px;
 }
 article.news-item h4 {
-    margin:5px 10px;
+    margin-top:5px;
 }
-article.news-item p {
+article.news-item p.category {
+    color:#444;
+    font-size:14px;
+    line-height:normal;
+    margin:0;
+}
+article.news-item p.synopsis {
     margin:5px 10px;
 }
 article.news-item:nth-of-type(even) figure {
