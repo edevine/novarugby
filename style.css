@@ -439,14 +439,15 @@ ul.content li {
 }
 img.sponsor-logo {
     border:1px solid #eee;
+    margin-left:10px;
     padding:1px;
     float:right;
 }
 .sponsor-about {
     font-size:16px;
 }
-section.venue {
-    margin:20px 5px 40px 5px;
+section.venue+section.venue {
+    margin-top:30px;
 }
 .venue-type {
     color:#ce1f2c;
