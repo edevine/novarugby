@@ -1,4 +1,6 @@
 <?
+header('Content-Type: text/xml; charset=utf-8');
+
 $articles = $db->prepare("select * from articles order by pubdate desc limit 10");
 $articles->bindColumn('url', $url);
 $articles->bindColumn('imgurl', $imgurl);
@@ -7,9 +9,8 @@ $articles->bindColumn('pubdate', $pubdate);
 $articles->bindColumn('synopsis', $synopsis);
 $articles->bindColumn('body', $body);
 $articles->execute();
-?>
-<?= '<?' ?>xml version="1.0" encoding="utf-8"?>
-<?= '<?' ?>xml-stylesheet type="text/css" media="screen" href="http://localhost/rss.css"?>
+
+echo '<?' ?>xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
     <channel>
         <title>NOVA Rugby</title>

@@ -1,0 +1,7 @@
+php_value auto_prepend_file ../_init.php
+php_value auto_append_file ../_footer.php
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9-]+)$ template.php?id=$1 [L]

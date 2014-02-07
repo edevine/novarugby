@@ -1,17 +1,3 @@
-<?
-$base_url = '/novarugby/';
-$url = $_SERVER['REQUEST_URI'];
-$rel_url = preg_replace('/^'.preg_quote($base_url,'/').'/','',$url);
-
-if (preg_match('~^[a-z]*~',$rel_url,$matches)) {
-    $section = $matches[0] ? $matches[0] : 'news';
-}
-if (preg_match('~\.([a-z]+$)~',$_SERVER['PHP_SELF'],$matches)) {
-    $EXT = $matches[1];
-}
-$db = new PDO('mysql:host=localhost;dbname=novarugby', 'novarugby', 'Cardinal7');
-?>
-<? if ($EXT=="html"): ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,4 +27,3 @@ $db = new PDO('mysql:host=localhost;dbname=novarugby', 'novarugby', 'Cardinal7')
         <div id="content">
 <? require '_aside.html' ?>
             <main>
-<? endif; ?>

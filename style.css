@@ -237,7 +237,23 @@ a {
 a:hover {
     text-decoration:underline;
 }
-
+article.full time {
+    color:#444;
+    float:right;
+    text-transform:uppercase;
+}
+article.full p.category {
+    color:#ce1f2c;
+    font-weight:bold;
+    margin:0;
+    text-transform:uppercase;
+}
+article.full p.category:before {
+    content:"\00bb  ";
+}
+article.full h1 {
+    margin:0;
+}
 article.news-item {
     background-color:#f6f6f6;
     height:174px
@@ -272,6 +288,9 @@ article.news-item p.category {
     font-size:0.875em;
     line-height:normal;
     margin:0;
+}
+article.news-item p.category:before {
+    content:"\00bb  ";
 }
 article.news-item p.synopsis {
     margin:5px 10px;

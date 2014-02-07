@@ -1,5 +1,5 @@
 <?
-$articles = $db->prepare("select * from articles order by pubdate desc limit 10");
+$articles = $db->prepare("select * from articles order by pubdate desc limit 4");
 $articles->bindColumn('category', $category);
 $articles->bindColumn('url', $url);
 $articles->bindColumn('imgurl', $imgurl);
