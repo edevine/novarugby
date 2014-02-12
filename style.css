@@ -420,13 +420,26 @@ table.schedule {
 }
 table.schedule tr {
     border-bottom:1px solid #eee;
+    height:52px;
 }
-.schedule .date {
+table.schedule .date {
+    color:#444;
     font-size:12px;
+    width:100px;
 }
-.schedule .opp.away:before {
+table.schedule .img {
+    width:52px;
+}
+table.schedule .img img {
+    height:48px;
+    width:48px;
+}
+table.schedule .opp.away:before {
     content:"@ ";
-} 
+}
+table.schedule .result {
+    text-align:center;
+}
 ul.content {
     list-style-type:none;
     margin:0;
