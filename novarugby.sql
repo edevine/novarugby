@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 12, 2014 at 08:37 PM
--- Server version: 5.5.24-log
--- PHP Version: 5.3.13
+-- Generation Time: Feb 13, 2014 at 01:00 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `novarugby`
 --
+CREATE DATABASE IF NOT EXISTS `novarugby` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `novarugby`;
 
 -- --------------------------------------------------------
 
@@ -50,6 +52,40 @@ INSERT INTO `articles` (`id`, `external`, `category`, `url`, `imgurl`, `pubdate`
 (2, 0, 'Match Report', 'news/2013-07-20/nova-heading-to-nationals', 'img/photo/nova.jpg', '2013-07-20', 'NOVA heading to Nationals', 'NOVA qualified for a trip to the Nationals Aug 10, by defeating Norfolk 33-5 in the semi-finals.', '<p> The report from Norfolk and the MARFU 7s championships is a great one.\r\nNOVA qualified for a trip to the Nationals Aug 10, by defeating Norfolk 33-5 in the semi-finals.\r\n<p> Unfortunately, we lost 19-5 to Schuylkill River in the finals, but that was with a yellow and a red card against us for much of the game.\r\n<p> A big thanks to all the guys who went down today, including our 7 brave lads from the Open side who competed without substitutions and still kept fighting.\r\n<p> We will need that kind of effort as we prepare for Nationals in Pittsburgh the weekend of Aug. 10.\r\n<p> Congrats and thanks for doing the club proud\r\n<p> - Weasel\r\n', '2014-02-06 14:37:53'),
 (3, 0, 'Match Report', 'news/2013-06-05/nova-old-grays-win', 'img/photo/Old_Gray_vs_Roosters_Spring_2013.jpg', '2013-06-05', 'NOVA Old Grays Win', 'NOVA Old Boys trounce Roosters 34-10.', '<p>Several current NOVA players travelled out to "The Farm" to watch the Old Boys take on the Roosters.</p>\r\n<p>"The Farm" offered a family atmosphere that welcomed significant others and kids.  They also provided free beer and food for the degenerates this club willingly accepts.  This was a great opportunity to watch some good rugby and socialize with our Fore Fathers.</p>\r\n<p>The Old Boys dominated from the get go and Phantom scored an early try, the first of his hat trick.  The Forwards dominated the game and had 2 push over tries from 5 meter scrums.</p>\r\n<p>Some of our current players and coaches participated in the game and was fun to watch them get worked (Joey Chops Koko Quick Tap Too Tuff, Floody, and Prince). Weasel and BG were also there in support but everyone avoided them.</p>\r\n<br></br>\r\n<p>Here is the writeup from our Old Boy contingent:</p>\r\n<p>"Thanks to all the players, families, friends, NOVA players, NOVA alum, who came out to the match yesterday! You all make a bunch of old guys feel young again and are helping to grow the Old Gray both on the pitch and off.</p>\r\n<p>The interest in the club and growth this spring has been fantastic! Each match brings out a few more guys to shake off the rust and a few more alum to laugh at how the mighty have fallen. It is becoming a pleasure to schedule these events as we no longer have to hold our breath in hopes of having enough players show up.</p>\r\n<p>Our play on the field has been strong and determined. Our forwards often run like our oppositions backs and our backs tackle and ruck with reckless abandon. The play is selfless and the ball moves quickly during all phases of play. My lack of rugby knowledge and english skills have brought me to the end of my pontificating."</p>\r\n<br></br>\r\n<p>Thanks to all that came out, I hope that we can continue to support our Old Boys and enjoy great days like this.</p>\r\n', '2014-02-06 15:05:27'),
 (4, 0, 'Social Event', 'news/2013-05-30/watch-usa-v-ire-on-08-june-2013-730pm', 'img/photo/nova.jpg', '2013-05-30', 'Watch USA v IRE on 08 June 2013 @ 7:30PM', 'We will be watching the USA v IRE test match at O''Sullivans bar and use that opportunity to promote the club and recruit new talent.', '<p>\r\nNOVA,\r\n</p>\r\n<p>\r\nIn response to the need to increase recruiting efforts, we have decided to hold a recruiting event in Virginia as a way to attract new players and talent to the team.  We will be watching the USA v IRE test match at O''Sullivans bar and use that opportunity to promote the club and recruit new talent.  Also, in order to boost the reach of this event, if you have a Facebook account, please go to this EVENT and "join" it  (<a href="https://www.facebook.com/events/105276996349116/">https://www.facebook.com/events/105276996349116/</a>).\r\n</p>\r\n<p>\r\n<b>Details:</b><br>\r\n \r\n<b>Date:</b> 08 June 2013<br>\r\n<b>Time:</b> 5:00-9:00PM<br>\r\n<b>Location:</b> O''Sullivan''s Irish pub and Restaurant, 3207 Washington Blvd, Arlington, VA<br>\r\n<b>Who:</b> All NOVA Players, Old Boys, friends, and family<br>\r\n<b>What:</b> Watch USA v IRE test match and promote NOVA Rugby<br>\r\n<b>Attire:</b> New NOVA shirts preferred, but any NOVA item of clothing will do\r\n</p>\r\n<p>\r\nI know that this coincides with the Wilmington 7s tournament that day, but it was an opportunity we could not pass up.  Therefore, if you are ARE going to the tournament, please come by when you get back.  If you are NOT going to the tournament, this is as close to a required event as it gets as we need people to come in force.  Please make it a point to come and support the team and any potential players!\r\n</p>\r\n<p>\r\nIf you have any questions/concerns, please let me know.\r\n</p>\r\n<p>\r\nThanks,<br>\r\nJustin Smith<br>\r\nVice President<br>\r\n</p>', '2014-02-07 15:03:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` tinyint(11) unsigned NOT NULL AUTO_INCREMENT,
+  `main` tinyint(1) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` bigint(10) unsigned DEFAULT NULL,
+  `order` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=574 ;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `main`, `name`, `title`, `email`, `phone`, `order`) VALUES
+(1, 0, 'Clarence Williams', 'President', 'cfwilliams10@hotmail.com', 2023656991, 2),
+(2, 1, 'Adam Henderson', 'Match Secretary', 'henderab@gmail.com', 5713346975, 4),
+(3, 0, 'John Gluck', 'Club Treasurer', 'jgluck8513@aol.com', NULL, 7),
+(4, 1, 'Ethan Harris', 'Recruiting', 'newnovarecruit@gmail.com', NULL, 5),
+(5, 0, 'Ted Brisbin', 'Team Treasurer', 'pmirabella@yahoo.com', 5166591429, 6),
+(6, 0, 'Charlie Kaiman', 'Old Boys'' Liaison', 'c_kaiman@hotmail.com', NULL, 9),
+(7, 0, 'Eric Devine', 'Webmaster', 'devineej@gmail.com', NULL, 10),
+(8, 1, 'Mike Sohdi', 'Head Coach', 'westendco1@aol.com', NULL, 1),
+(9, 1, 'Justin Smith', 'Vice President', 'justinosmith12@gmail.com', 7038811572, 3),
+(10, 0, 'Christian Lewis', 'Fundraising', 'cclewis18@comcast.com', 2155271313, 7),
+(11, 0, 'Andrew Golkin', 'Fields', 'angolkin@pdrvirginia.com', 7036229883, 8);
 
 -- --------------------------------------------------------
 

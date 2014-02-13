@@ -106,7 +106,7 @@ body>header>nav ul {
     width:1000px;
 }
 body>header>nav li {
-    font-size:24px;
+    font-size:22px;
     font-weight:bold;
     float:left;
     height:56px;
@@ -310,12 +310,24 @@ section.contrast {
 main section.contrast {
     margin-top:32px;
 }
-.contact > * {
+aside div.contact > * {
     margin:4px 20px 4px 18px;
 }
-.contact + .contact {
+aside .contact + .contact {
     margin-top:16px;
 }
+main div.contact {
+    height:102px;
+    float:left;
+    width:310px;
+}
+main div.contact:nth-of-type(even) {
+    margin-left:10px;
+}
+main div.contact > * {
+    margin:0.25em 0;
+}
+
 
 ul.roster {
     list-style-type:none;

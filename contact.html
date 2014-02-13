@@ -1,0 +1,14 @@
+<?
+$contacts = $db->query('select * from contacts order by `order` asc, name asc');
+?>
+<header>
+    <h1>Contact</h1>
+</header>
+<? while ($contact = $contacts->fetchObject()): ?>
+<div class="contact">
+    <h5><?= $contact->title ?></h5>
+    <p><?= $contact->name ?></p>
+    <p><a href="mailto:<?= $contact->email ?>"><?= $contact->email ?></a></p>
+    <p><a href="tel:<?= $contact->phone ?>"><?= format_phone($contact->phone) ?></a></p>
+</div>
+<? endwhile ?>
