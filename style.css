@@ -122,6 +122,15 @@ body>header>nav li a {
 body>header>nav li a:hover {
     text-decoration:underline;
 }
+body > footer {
+    color:#222;
+    font-size:13px;
+    margin:20px auto;
+    width:1000px;
+}
+body > footer p {
+    text-align:center;
+}
 #content {
     background:white url('img/logo-bg.jpg') no-repeat right bottom;
     border-bottom:4px solid #ce1f2c;
