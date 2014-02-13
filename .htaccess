@@ -11,4 +11,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([a-z/-]*)$ $1.html [L]
 RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^_|\.php$|\.sql$|\.md$ . [R=404,L]
+RewriteRule ^_|\.php$|\.sql$|\.md$|\.ini$|\.xcf$ . [R=404,L]
