@@ -3,6 +3,7 @@
     font-family: Quicksand-Regular; 
     src: url('ui/font/Quicksand-Regular.otf');
 }
+main, section, header, footer, nav, article, figure, figcaption, aside { display: block; }
 address, p, li, dt, dd {
     line-height:1.35;
     margin:0.5em 0; 
@@ -458,7 +459,7 @@ article.feed p {
 }
 table.schedule {
     border-collapse:collapse;
-    width:630px;
+    width:100%;
 }
 table.schedule tr {
     border-bottom:1px solid #eee;
