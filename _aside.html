@@ -23,13 +23,15 @@ $contacts = $db->query('select * from contacts where main = 1 order by `order` a
         <header>
             <h2>Contact</h2>
         </header>
-        <? while ($contact = $contacts->fetchObject()): ?>
-        <div class="contact">
-            <h5><?= $contact->title ?></h5>
-            <p><?= $contact->name ?></p>
-            <p><a href="mailto:<?= $contact->email ?>"><?= $contact->email ?></a></p>
-            <p><a href="tel:<?= $contact->phone ?>"><?= format_phone($contact->phone) ?></a></p>
-        </div>
-        <? endwhile ?>
+        <ul class="contacts">
+            <? while ($contact = $contacts->fetchObject()): ?>
+            <li>
+                <h5><?= $contact->title ?></h5>
+                <p><?= $contact->name ?></p>
+                <p><a href="mailto:<?= $contact->email ?>"><?= $contact->email ?></a></p>
+                <p><a href="tel:<?= $contact->phone ?>"><?= format_phone($contact->phone) ?></a></p>
+            </li>
+            <? endwhile ?>
+        </ul>
     </section>
 </aside>

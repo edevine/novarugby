@@ -319,21 +319,36 @@ section.contrast {
 main section.contrast {
     margin-top:32px;
 }
-aside div.contact > * {
+aside ul.contacts {
+    list-style-type:none;
+    padding:0;
+}
+aside ul.contacts li {
+    margin:0;
+}
+aside ul.contacts li > * {
     margin:4px 20px 4px 18px;
 }
-aside .contact + .contact {
+aside ul.contacts li + li {
     margin-top:16px;
 }
-main div.contact {
+main ul.contacts {
+    list-style-type:none;
+    padding:0;
+}
+main ul.contacts li {
     height:102px;
     float:left;
+    margin:0;
     width:310px;
 }
-main div.contact:nth-of-type(even) {
+main ul.contacts li + li + li {
+    margin-top:10px;
+}
+main ul.contacts li:nth-of-type(even) {
     margin-left:10px;
 }
-main div.contact > * {
+main ul.contacts li > * {
     margin:0.25em 0;
 }
 
@@ -446,8 +461,7 @@ article.feed p {
 }
 table.schedule {
     border-collapse:collapse;
-    margin:5px;
-    width:100%;
+    width:630px;
 }
 table.schedule tr {
     border-bottom:1px solid #eee;
