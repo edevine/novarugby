@@ -389,7 +389,17 @@ aside#sidebar header {
     top:90px;
 }
 
-/* Old needs to be modified */
+article.sponsor:after {
+    clear: left;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+article.sponsor + article.sponsor {
+    margin-top:30px;
+}
 
 article.feed {
     background-color:#f6f6f6;
@@ -467,9 +477,6 @@ img.sponsor-logo {
     margin-left:10px;
     padding:1px;
     float:right;
-}
-.sponsor-about {
-    font-size:16px;
 }
 section.venue+section.venue {
     margin-top:30px;
