@@ -2,7 +2,11 @@ php_value short_open_tag 1
 php_value auto_prepend_file ./_init.php
 php_value auto_append_file ./_footer.php
 
+#for development:
 AddHandler php5-script .html .php .rss
+
+#for production:
+#AddHandler application/x-httpd-php54 .html .php .rss
 
 DirectoryIndex news.html
 
