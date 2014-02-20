@@ -3,6 +3,13 @@
 // See config.EXAMPLE.php for format
 require 'config.php';
 
+define('INC', __DIR__ . '/');
+define('INC_404', INC . '404.html');
+define('INC_ASIDE', INC . 'aside.php');
+define('INC_DUES', INC . 'dues.php');
+define('INC_FOOTER', INC . 'footer.php');
+define('INC_HEADER', INC . 'header.php');
+
 date_default_timezone_set('America/New_York');
 
 $dir = str_replace(DIRECTORY_SEPARATOR, '/', dirname(__DIR__));
@@ -20,6 +27,8 @@ if (preg_match('~^[a-z]*~',$rel_url,$matches)) {
 if (preg_match('~\.([a-z]+$)~',$_SERVER['PHP_SELF'],$matches)) {
     $EXT = $matches[1];
 }
+
+// DB_* constants defined in 'config.php'
 $db = new PDO('mysql:host=localhost;dbname=' . DB_NAME, DB_USER, DB_PASS);
 
 function format_phone($int) {
@@ -29,4 +38,4 @@ function format_phone($int) {
 }
 
 if ($EXT=='html')
-    include 'header.php';
+    include INC_HEADER;

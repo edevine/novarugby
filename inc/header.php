@@ -28,5 +28,5 @@
             </nav>
         </header>
         <div id="content">
-<? require 'aside.php' ?>
+<? include INC_ASIDE ?>
             <main>
