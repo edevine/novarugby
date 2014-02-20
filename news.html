@@ -1,28 +1,20 @@
 <?
-$articles = $db->prepare("select * from articles order by pubdate desc limit 4");
-$articles->bindColumn('category', $category);
-$articles->bindColumn('url', $url);
-$articles->bindColumn('imgurl', $imgurl);
-$articles->bindColumn('title', $title);
-$articles->bindColumn('pubdate', $pubdate);
-$articles->bindColumn('synopsis', $synopsis);
-$articles->bindColumn('body', $body);
-$articles->execute();
+$articles = $db->query("select * from articles order by pubdate desc limit 4");
 ?>
 <header>
     <h1>News</h1>
 </header>
-<? while ($articles->fetch(PDO::FETCH_BOUND)): ?>
+<? while ($article = $articles->fetchObject()): ?>
 <article class="news-item">
     <figure>
-        <img src="<?= $imgurl ?>" alt="some pic">
+        <img src="<?= $article->imgurl ?>" alt="some pic">
     </figure>
     <header>
-        <time datetime="<?= $pubdate ?>"><?= date('l, F j', strtotime($pubdate)) ?></time>
-        <p class="category"><?= $category ?></p>
-        <h4><a href="<?= $url ?>"><?= $title ?></a></h4>
+        <time datetime="<?= $article->pubdate ?>"><?= date('l, F j', strtotime($article->pubdate)) ?></time>
+        <p class="category"><?= $article->category ?></p>
+        <h4><a href="<?= $article->url ?>"><?= $article->title ?></a></h4>
     </header>
-    <p class="synopsis"><?= $synopsis ?></p>
+    <p class="synopsis"><?= $article->synopsis ?></p>
 </article>
 <? endwhile ?>
 <? include INC_DUES ?>
