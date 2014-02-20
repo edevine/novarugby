@@ -10,6 +10,7 @@ define('INC_ASIDE', INC . 'aside.php');
 define('INC_DONATE', INC . 'donate.php');
 define('INC_DUES', INC . 'dues.php');
 define('INC_FOOTER', INC . 'footer.php');
+define('INC_HEAD', INC . 'head.php');
 define('INC_HEADER', INC . 'header.php');
 
 date_default_timezone_set('America/New_York');
