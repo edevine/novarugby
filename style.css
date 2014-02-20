@@ -410,6 +410,9 @@ aside#sidebar header {
     position:fixed;
     top:90px;
 }
+#social img {
+    border:0;
+}
 
 article.sponsor:after {
     clear: left;
