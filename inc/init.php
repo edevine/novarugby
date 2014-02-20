@@ -5,7 +5,9 @@ require 'config.php';
 
 define('INC', __DIR__ . '/');
 define('INC_404', INC . '404.html');
+define('INC_ABOUT_NAV', INC . 'about_nav.php');
 define('INC_ASIDE', INC . 'aside.php');
+define('INC_DONATE', INC . 'donate.php');
 define('INC_DUES', INC . 'dues.php');
 define('INC_FOOTER', INC . 'footer.php');
 define('INC_HEADER', INC . 'header.php');
