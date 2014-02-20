@@ -9,6 +9,7 @@ $dir = str_replace(DIRECTORY_SEPARATOR, '/', __DIR__);
 $root = preg_replace('~/$~', '', $_SERVER['DOCUMENT_ROOT']);
 $base_url = str_replace($root, '', $dir);
 $base_url .= substr($base_url,-1) != '/' ? '/' : '';
+$base_url = 'http://' . $_SERVER['SERVER_NAME'] . ($_SERVER['SERVER_PORT'] != '80' ? ':' . $_SERVER['SERVER_PORT'] : '') . $base_url;
 
 $url = $_SERVER['REQUEST_URI'];
 $rel_url = preg_replace('/^'.preg_quote($base_url,'/').'/','',$url);
