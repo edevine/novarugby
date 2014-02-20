@@ -1,4 +1,5 @@
 <?
+$EXT = 'html';
 $article = $db->prepare('select * from articles where url = ? limit 1');
 $article->bindValue(1, 'news/' . $_GET['id']);
 $article->execute();
