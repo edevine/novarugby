@@ -21,7 +21,7 @@
                         <li><a href="./venue">Venue</a>
                         <li><a href="./roster">Roster</a>
                         <li><a href="./sponsors">Sponsors</a>
-                        <li><a href="./about">About</a>
+                        <li><a href="./about/">About</a>
                         <li><a href="./contact">Contact</a>
                     </ul>
                 </div>
