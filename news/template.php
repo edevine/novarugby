@@ -5,11 +5,11 @@ $article->execute();
 
 if (!$article->rowCount()) {
     header("HTTP/1.0 404 Not Found");
-    include '_404.html';
+    include '../inc/404.html';
     exit();
 }
 
-include '../_header.html';
+include '../inc/header.php';
 
 $article->bindColumn('category', $category);
 $article->bindColumn('url', $url);

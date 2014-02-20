@@ -1,11 +1,11 @@
 <?
 // Place all sensitive information in _config.php
-// See _config.EXAMPLE.php for format
-require '_config.php';
+// See config.EXAMPLE.php for format
+require 'config.php';
 
 date_default_timezone_set('America/New_York');
 
-$dir = str_replace(DIRECTORY_SEPARATOR, '/', __DIR__);
+$dir = str_replace(DIRECTORY_SEPARATOR, '/', dirname(__DIR__));
 $root = preg_replace('~/$~', '', $_SERVER['DOCUMENT_ROOT']);
 $base_url = str_replace($root, '', $dir);
 $base_url .= substr($base_url,-1) != '/' ? '/' : '';
@@ -29,4 +29,4 @@ function format_phone($int) {
 }
 
 if ($EXT=='html')
-    include '_header.html';
+    include 'header.php';

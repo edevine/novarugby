@@ -28,5 +28,5 @@
             </nav>
         </header>
         <div id="content">
-<? require '_aside.html' ?>
+<? require 'aside.php' ?>
             <main>
