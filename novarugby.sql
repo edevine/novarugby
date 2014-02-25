@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 3.4.11.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 13, 2014 at 01:00 AM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- Generation Time: Feb 25, 2014 at 07:33 AM
+-- Server version: 5.5.36
+-- PHP Version: 5.2.17
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,10 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `novarugby`
+-- Database: `devineej_novarugby`
 --
-CREATE DATABASE IF NOT EXISTS `novarugby` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `novarugby`;
 
 -- --------------------------------------------------------
 
@@ -28,6 +26,7 @@ USE `novarugby`;
 -- Table structure for table `articles`
 --
 
+DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `external` tinyint(1) NOT NULL DEFAULT '0',
@@ -59,6 +58,7 @@ INSERT INTO `articles` (`id`, `external`, `category`, `url`, `imgurl`, `pubdate`
 -- Table structure for table `contacts`
 --
 
+DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` tinyint(11) unsigned NOT NULL AUTO_INCREMENT,
   `main` tinyint(1) NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `phone` bigint(10) unsigned DEFAULT NULL,
   `order` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=574 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `contacts`
@@ -93,6 +93,7 @@ INSERT INTO `contacts` (`id`, `main`, `name`, `title`, `email`, `phone`, `order`
 -- Table structure for table `content`
 --
 
+DROP TABLE IF EXISTS `content`;
 CREATE TABLE IF NOT EXISTS `content` (
   `_id` binary(8) NOT NULL,
   `_rev` binary(8) NOT NULL,
@@ -110,6 +111,7 @@ CREATE TABLE IF NOT EXISTS `content` (
 -- Table structure for table `games`
 --
 
+DROP TABLE IF EXISTS `games`;
 CREATE TABLE IF NOT EXISTS `games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `season` smallint(4) NOT NULL DEFAULT '2013',
@@ -121,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `games` (
   `oppLogo` varchar(255) DEFAULT NULL,
   `novaScore` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=5097 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=5098 ;
 
 --
 -- Dumping data for table `games`
@@ -224,8 +226,8 @@ INSERT INTO `games` (`id`, `season`, `date`, `time`, `away`, `opponent`, `oppSco
 (5067, 2014, '2014-03-08', NULL, 1, 'Norfolk Blues', NULL, 'img/logo/tm/norfolk.png', NULL),
 (5071, 2014, '2014-03-15', NULL, 1, 'Maryland Exiles', NULL, 'img/logo/tm/mdx.png', NULL),
 (5074, 2014, '2014-03-22', NULL, 0, 'Baltimore-Chesapeake', NULL, 'img/logo/tm/baltimore.png', NULL),
-(5095, 2014, '2014-02-15', NULL, 1, 'Mary Washington', NULL, NULL, NULL),
-(5096, 2014, '2014-04-05', NULL, 0, 'Maryland Exiles', NULL, 'img/logo/tm/mdx.png', NULL);
+(5096, 2014, '2014-04-05', NULL, 0, 'Maryland Exiles', NULL, 'img/logo/tm/mdx.png', NULL),
+(5097, 2014, '2014-02-27', '13:00:00', 0, 'Western Suburbs', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -233,6 +235,7 @@ INSERT INTO `games` (`id`, `season`, `date`, `time`, `away`, `opponent`, `oppSco
 -- Table structure for table `photos`
 --
 
+DROP TABLE IF EXISTS `photos`;
 CREATE TABLE IF NOT EXISTS `photos` (
   `_id` binary(8) NOT NULL,
   `_rev` binary(8) NOT NULL,
@@ -253,6 +256,7 @@ CREATE TABLE IF NOT EXISTS `photos` (
 -- Table structure for table `roster`
 --
 
+DROP TABLE IF EXISTS `roster`;
 CREATE TABLE IF NOT EXISTS `roster` (
   `ref` int(11) NOT NULL AUTO_INCREMENT,
   `teamid` varchar(32) NOT NULL DEFAULT 'md1-nova',
@@ -287,7 +291,6 @@ INSERT INTO `roster` (`ref`, `teamid`, `lastname`, `firstname`, `position`, `hei
 (15, 'md1-nova', 'Gericke', 'Daniel', 'Centre', 73, 200, ''),
 (16, 'md1-nova', 'Golkin', 'Andrew', 'Hooker', 66, 180, 'University of Maryland'),
 (17, 'md1-nova', 'Gregory', 'Terris', 'Centre, Wing', 72, 220, 'Liberty University'),
-(18, 'md1-nova', 'Hegarty', 'David', 'Utility Back', 68, 150, 'Ohio State University'),
 (19, 'md1-nova', 'Hagan', 'William', 'Hooker', 67, 200, 'Old Dominion University'),
 (20, 'md1-nova', 'Halpin', 'Connor', 'Prop, Eight Man', 72, 250, 'Norwich University'),
 (21, 'md1-nova', 'Harris', 'Ethan', 'Centre, Wing', 67, 170, 'Lynchburg College'),
@@ -324,6 +327,7 @@ INSERT INTO `roster` (`ref`, `teamid`, `lastname`, `firstname`, `position`, `hei
 -- Table structure for table `states`
 --
 
+DROP TABLE IF EXISTS `states`;
 CREATE TABLE IF NOT EXISTS `states` (
   `id` char(2) NOT NULL,
   `name` varchar(16) NOT NULL,
