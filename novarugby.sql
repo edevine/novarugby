@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.11.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 25, 2014 at 07:33 AM
--- Server version: 5.5.36
--- PHP Version: 5.2.17
+-- Generation Time: May 07, 2014 at 02:22 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,8 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `devineej_novarugby`
+-- Database: `novarugby`
 --
+CREATE DATABASE IF NOT EXISTS `novarugby` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `novarugby`;
 
 -- --------------------------------------------------------
 
@@ -26,7 +28,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `articles`
 --
 
-DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `external` tinyint(1) NOT NULL DEFAULT '0',
@@ -40,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `lastmodified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `url` (`url`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `articles`
@@ -50,7 +51,8 @@ INSERT INTO `articles` (`id`, `external`, `category`, `url`, `imgurl`, `pubdate`
 (1, 0, 'Practice Update', 'news/2014-01-25/first-spring-practice', 'img/photo/nova.jpg', '2014-01-25', 'First Spring Practice', 'NOVA Men''s Rugby will be holding its first Spring Practice on 11 February 2014 at 8:30PM at Oakton High School.', '<p> NOVA Men''s Rugby will be holding its first Spring Practice on 11 February 2014 at 8:30PM at Oakton High School (see below details).  If you haven''t started pre-season conditioning, now is the time to get going so that we can hot the ground running and prepare for our upcoming matches.\r\n\r\n<p> Who:  All NOVA Players and Coaches\r\n<br> What: First Spring Practice\r\n<br> Where: <a href="https://www.google.com/maps/preview/place/Oakton+High+School/@38.8784621,-77.2816203,17z/data=!4m2!3m1!1s0x0:0xadbf7ab1176ff030">Oakton High School, Vienna, VA</a>\r\n<br> When:  Tuesday, 11 February 2014 @ 8:30PM\r\n\r\n<p> GO NOVA!', '2014-02-06 14:38:37'),
 (2, 0, 'Match Report', 'news/2013-07-20/nova-heading-to-nationals', 'img/photo/nova.jpg', '2013-07-20', 'NOVA heading to Nationals', 'NOVA qualified for a trip to the Nationals Aug 10, by defeating Norfolk 33-5 in the semi-finals.', '<p> The report from Norfolk and the MARFU 7s championships is a great one.\r\nNOVA qualified for a trip to the Nationals Aug 10, by defeating Norfolk 33-5 in the semi-finals.\r\n<p> Unfortunately, we lost 19-5 to Schuylkill River in the finals, but that was with a yellow and a red card against us for much of the game.\r\n<p> A big thanks to all the guys who went down today, including our 7 brave lads from the Open side who competed without substitutions and still kept fighting.\r\n<p> We will need that kind of effort as we prepare for Nationals in Pittsburgh the weekend of Aug. 10.\r\n<p> Congrats and thanks for doing the club proud\r\n<p> - Weasel\r\n', '2014-02-06 14:37:53'),
 (3, 0, 'Match Report', 'news/2013-06-05/nova-old-grays-win', 'img/photo/Old_Gray_vs_Roosters_Spring_2013.jpg', '2013-06-05', 'NOVA Old Grays Win', 'NOVA Old Boys trounce Roosters 34-10.', '<p>Several current NOVA players travelled out to "The Farm" to watch the Old Boys take on the Roosters.</p>\r\n<p>"The Farm" offered a family atmosphere that welcomed significant others and kids.  They also provided free beer and food for the degenerates this club willingly accepts.  This was a great opportunity to watch some good rugby and socialize with our Fore Fathers.</p>\r\n<p>The Old Boys dominated from the get go and Phantom scored an early try, the first of his hat trick.  The Forwards dominated the game and had 2 push over tries from 5 meter scrums.</p>\r\n<p>Some of our current players and coaches participated in the game and was fun to watch them get worked (Joey Chops Koko Quick Tap Too Tuff, Floody, and Prince). Weasel and BG were also there in support but everyone avoided them.</p>\r\n<br></br>\r\n<p>Here is the writeup from our Old Boy contingent:</p>\r\n<p>"Thanks to all the players, families, friends, NOVA players, NOVA alum, who came out to the match yesterday! You all make a bunch of old guys feel young again and are helping to grow the Old Gray both on the pitch and off.</p>\r\n<p>The interest in the club and growth this spring has been fantastic! Each match brings out a few more guys to shake off the rust and a few more alum to laugh at how the mighty have fallen. It is becoming a pleasure to schedule these events as we no longer have to hold our breath in hopes of having enough players show up.</p>\r\n<p>Our play on the field has been strong and determined. Our forwards often run like our oppositions backs and our backs tackle and ruck with reckless abandon. The play is selfless and the ball moves quickly during all phases of play. My lack of rugby knowledge and english skills have brought me to the end of my pontificating."</p>\r\n<br></br>\r\n<p>Thanks to all that came out, I hope that we can continue to support our Old Boys and enjoy great days like this.</p>\r\n', '2014-02-06 15:05:27'),
-(4, 0, 'Social Event', 'news/2013-05-30/watch-usa-v-ire-on-08-june-2013-730pm', 'img/photo/nova.jpg', '2013-05-30', 'Watch USA v IRE on 08 June 2013 @ 7:30PM', 'We will be watching the USA v IRE test match at O''Sullivans bar and use that opportunity to promote the club and recruit new talent.', '<p>\r\nNOVA,\r\n</p>\r\n<p>\r\nIn response to the need to increase recruiting efforts, we have decided to hold a recruiting event in Virginia as a way to attract new players and talent to the team.  We will be watching the USA v IRE test match at O''Sullivans bar and use that opportunity to promote the club and recruit new talent.  Also, in order to boost the reach of this event, if you have a Facebook account, please go to this EVENT and "join" it  (<a href="https://www.facebook.com/events/105276996349116/">https://www.facebook.com/events/105276996349116/</a>).\r\n</p>\r\n<p>\r\n<b>Details:</b><br>\r\n \r\n<b>Date:</b> 08 June 2013<br>\r\n<b>Time:</b> 5:00-9:00PM<br>\r\n<b>Location:</b> O''Sullivan''s Irish pub and Restaurant, 3207 Washington Blvd, Arlington, VA<br>\r\n<b>Who:</b> All NOVA Players, Old Boys, friends, and family<br>\r\n<b>What:</b> Watch USA v IRE test match and promote NOVA Rugby<br>\r\n<b>Attire:</b> New NOVA shirts preferred, but any NOVA item of clothing will do\r\n</p>\r\n<p>\r\nI know that this coincides with the Wilmington 7s tournament that day, but it was an opportunity we could not pass up.  Therefore, if you are ARE going to the tournament, please come by when you get back.  If you are NOT going to the tournament, this is as close to a required event as it gets as we need people to come in force.  Please make it a point to come and support the team and any potential players!\r\n</p>\r\n<p>\r\nIf you have any questions/concerns, please let me know.\r\n</p>\r\n<p>\r\nThanks,<br>\r\nJustin Smith<br>\r\nVice President<br>\r\n</p>', '2014-02-07 15:03:24');
+(4, 0, 'Social Event', 'news/2013-05-30/watch-usa-v-ire-on-08-june-2013-730pm', 'img/photo/nova.jpg', '2013-05-30', 'Watch USA v IRE on 08 June 2013 @ 7:30PM', 'We will be watching the USA v IRE test match at O''Sullivans bar and use that opportunity to promote the club and recruit new talent.', '<p>\r\nNOVA,\r\n</p>\r\n<p>\r\nIn response to the need to increase recruiting efforts, we have decided to hold a recruiting event in Virginia as a way to attract new players and talent to the team.  We will be watching the USA v IRE test match at O''Sullivans bar and use that opportunity to promote the club and recruit new talent.  Also, in order to boost the reach of this event, if you have a Facebook account, please go to this EVENT and "join" it  (<a href="https://www.facebook.com/events/105276996349116/">https://www.facebook.com/events/105276996349116/</a>).\r\n</p>\r\n<p>\r\n<b>Details:</b><br>\r\n \r\n<b>Date:</b> 08 June 2013<br>\r\n<b>Time:</b> 5:00-9:00PM<br>\r\n<b>Location:</b> O''Sullivan''s Irish pub and Restaurant, 3207 Washington Blvd, Arlington, VA<br>\r\n<b>Who:</b> All NOVA Players, Old Boys, friends, and family<br>\r\n<b>What:</b> Watch USA v IRE test match and promote NOVA Rugby<br>\r\n<b>Attire:</b> New NOVA shirts preferred, but any NOVA item of clothing will do\r\n</p>\r\n<p>\r\nI know that this coincides with the Wilmington 7s tournament that day, but it was an opportunity we could not pass up.  Therefore, if you are ARE going to the tournament, please come by when you get back.  If you are NOT going to the tournament, this is as close to a required event as it gets as we need people to come in force.  Please make it a point to come and support the team and any potential players!\r\n</p>\r\n<p>\r\nIf you have any questions/concerns, please let me know.\r\n</p>\r\n<p>\r\nThanks,<br>\r\nJustin Smith<br>\r\nVice President<br>\r\n</p>', '2014-02-07 15:03:24'),
+(5, 0, 'Schedule', 'news/2014-05-06/summer-nova-7s-program', 'img/photo/nova.jpg', '2014-05-06', 'Summer NOVA 7s Program', 'NOVA''s summer 7s program is about to kick off and we wanted to make sure that everyone had the details.', '<p>\r\nNOVA''s summer 7s program is about to kick off and we wanted to make sure that everyone had the details.  NOVA had a great run last year, making it to the National Championship Tournament, but we would like to go above and beyond what we achieved last year.\r\n</p>\r\n<p>\r\nNOVA 7s is open to anyone over 18 years old, and we welcome new and experienced players.  If you have a friend who has been talking about trying this rugby thing out, sevens is a great way to introduce them to the sport.  Depending on our numbers we will be fielding a Premier and Social team at each of our events, so even if you are not an elite 7s player, there is still a lot of fun and playing to be had.\r\n</p>\r\n<p>\r\nBelow is the relevant information, and if you have any additional questions, contact the the match secretary.\r\n</p>\r\n<p>\r\n<b>Season Starts:</b><br>\r\nDate: 13 May 2014<br>\r\nTime: 8:30 PM<br>\r\nLocation: Oakton High School (<a href="https://www.google.com/maps/preview?ie=UTF-8&q=oakton+high+school&fb=1&gl=us&hq=oakton+high+school&cid=12519860390134280240&ei=V1RgU9qGJ9TKsQSPoIDIBg&ved=0CJwBEPwSMA0">MAP</a>)<br>\r\n</p>\r\n<p>\r\n<b>Practice:</b><br>\r\nDate: Tuesdays and Thursdays <br>\r\nTime: 8:30-10:30 PM<br>\r\nLocation: Oakton High School<br>\r\n</p>\r\n<p>\r\nMay 31 - Monk Vaughn, Richmond (Friendly)<br>\r\nJune 14 - Ruggerama/NOVA  (MAC Qualifier)<br>\r\nJune 28 - Wilmington (MAC Qualifier)<br>\r\nJuly 5 - Cape Fear (Friendly)<br>\r\nJuly 12 - Rocky George (MAC Qualifier)<br>\r\nJuly 26 - MAC/MARFU Championship<br>\r\nAugust 9-10 - USA Club 7s National Championship\r\n</p>', '2014-02-07 15:03:24');
 
 -- --------------------------------------------------------
 
@@ -58,7 +60,6 @@ INSERT INTO `articles` (`id`, `external`, `category`, `url`, `imgurl`, `pubdate`
 -- Table structure for table `contacts`
 --
 
-DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` tinyint(11) unsigned NOT NULL AUTO_INCREMENT,
   `main` tinyint(1) NOT NULL,
@@ -93,7 +94,6 @@ INSERT INTO `contacts` (`id`, `main`, `name`, `title`, `email`, `phone`, `order`
 -- Table structure for table `content`
 --
 
-DROP TABLE IF EXISTS `content`;
 CREATE TABLE IF NOT EXISTS `content` (
   `_id` binary(8) NOT NULL,
   `_rev` binary(8) NOT NULL,
@@ -111,7 +111,6 @@ CREATE TABLE IF NOT EXISTS `content` (
 -- Table structure for table `games`
 --
 
-DROP TABLE IF EXISTS `games`;
 CREATE TABLE IF NOT EXISTS `games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `season` smallint(4) NOT NULL DEFAULT '2013',
@@ -235,7 +234,6 @@ INSERT INTO `games` (`id`, `season`, `date`, `time`, `away`, `opponent`, `oppSco
 -- Table structure for table `photos`
 --
 
-DROP TABLE IF EXISTS `photos`;
 CREATE TABLE IF NOT EXISTS `photos` (
   `_id` binary(8) NOT NULL,
   `_rev` binary(8) NOT NULL,
@@ -256,7 +254,6 @@ CREATE TABLE IF NOT EXISTS `photos` (
 -- Table structure for table `roster`
 --
 
-DROP TABLE IF EXISTS `roster`;
 CREATE TABLE IF NOT EXISTS `roster` (
   `ref` int(11) NOT NULL AUTO_INCREMENT,
   `teamid` varchar(32) NOT NULL DEFAULT 'md1-nova',
@@ -291,6 +288,7 @@ INSERT INTO `roster` (`ref`, `teamid`, `lastname`, `firstname`, `position`, `hei
 (15, 'md1-nova', 'Gericke', 'Daniel', 'Centre', 73, 200, ''),
 (16, 'md1-nova', 'Golkin', 'Andrew', 'Hooker', 66, 180, 'University of Maryland'),
 (17, 'md1-nova', 'Gregory', 'Terris', 'Centre, Wing', 72, 220, 'Liberty University'),
+(18, 'md1-nova', 'Hegarty', 'David', 'Utility Back', 68, 150, 'Ohio State University'),
 (19, 'md1-nova', 'Hagan', 'William', 'Hooker', 67, 200, 'Old Dominion University'),
 (20, 'md1-nova', 'Halpin', 'Connor', 'Prop, Eight Man', 72, 250, 'Norwich University'),
 (21, 'md1-nova', 'Harris', 'Ethan', 'Centre, Wing', 67, 170, 'Lynchburg College'),
@@ -327,7 +325,6 @@ INSERT INTO `roster` (`ref`, `teamid`, `lastname`, `firstname`, `position`, `hei
 -- Table structure for table `states`
 --
 
-DROP TABLE IF EXISTS `states`;
 CREATE TABLE IF NOT EXISTS `states` (
   `id` char(2) NOT NULL,
   `name` varchar(16) NOT NULL,
