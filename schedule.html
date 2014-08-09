@@ -1,14 +1,14 @@
 <?
-//$schedule = $db->prepare("select * from games where season = ? order by date asc");
-//$schedule->bindValue(1, 2014, PDO::PARAM_INT);
-//$schedule->execute();
+$schedule = $db->prepare("select * from games where season = ? order by date asc");
+$schedule->bindValue(1, 2015, PDO::PARAM_INT);
+$schedule->execute();
 ?>
 <header>
     <h1>Schedule</h1>
 </header>
 <table class="schedule">
     <tbody>
-<? /*while ($game = $schedule->fetchObject()): ?>
+<? while ($game = $schedule->fetchObject()): ?>
         <tr>
             <td class="competition logo"><img class="logo" src="">
             <td class="date"><?= date('M d, Y',strtotime($game->date)), $game->time ? '<br>' . date('g:i A', strtotime($game->time)) : '' ?>
@@ -16,7 +16,8 @@
             <td class="opp<?= $game->away ? ' away' : '' ?>"><?= $game->opponent ?>
             <td class="result"><?= !is_null($game->novaScore) && !is_null($game->oppScore) ? ($game->novaScore > $game->oppScore ? 'W ' : ($game->novaScore < $game->oppScore ? 'L ' : 'T ')) : '', $game->novaScore, '-', $game->oppScore ?>
         </tr>
-<? endwhile*/ ?>
+<? endwhile; ?>
+<? /* 7's schedule by hand :(
         <tr>
             <td class="competition logo"></td>
             <td class="date">May 31, 2014</td>
@@ -66,5 +67,6 @@
             <td class="opp away">USA Club 7s National Championship</td>
             <td class="result">TBD</td>
         </tr>
+        */ ?>
     </tbody>
 </table>
