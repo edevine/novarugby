@@ -1,6 +1,6 @@
 <section class="contrast">
 	<h2>Player Dues</h2>
-    <p> NOVA is supported by our proud sponsors, but each player must also donate each season. Spring 2014 dues are <b>$150</b> for
+    <p> NOVA is supported by our proud sponsors, but each player must also donate each season. Spring 2014 dues are <b>$200</b> for
         returning players and <b>$100</b> for new players.
     <h3>Pay Dues Online</h3> 
     <p> Make the payment through our PayPal account by clicking on the button below.
@@ -14,7 +14,7 @@
         <p>
             <select name="amount"> 
                 <option value="100.00">New Player: $100</option> 
-                <option value="150.00">Returning Player: $150</option> 
+                <option value="200.00">Returning Player: $200</option> 
             </select>
         </p>
         <p>
