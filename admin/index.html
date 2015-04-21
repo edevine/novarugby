@@ -1,0 +1,40 @@
+<?
+    if (isset($_POST['signout'])) {
+        unset($_SESSION['user']);
+    }
+    else if (isset($_POST['email']) && isset($_POST['password'])) {
+        $roster = $db->query("SELECT * FROM roster WHERE email = '{$_POST['email']}' LIMIT 1");
+        $user = $roster->fetchObject();
+        if ($user->password == crypt($_POST['password'], $user->password)) {
+            $_SESSION['user'] = $user;
+        } else {
+            $login_error = "Invalid login credentials.";
+            unset($_SESSION['user']);
+        }
+    }
+    if (isset($_SESSION['user'])) {
+        $user = $_SESSION['user'];
+    }
+?>
+<? include INC_HEADER ?>
+<header>
+    <h1>Admin</h1>
+</header>
+<?
+if (!isset($user)):
+    include INC_LOGIN;
+else:
+?>
+<section class="contrast login-status">
+    <form method="post" action="/admin/">
+        <input type="hidden" name="signout" value="true">
+        <button type="submit">Sign Out</button>
+        <span>Signed in as <?= $user->name ?> (<?= $user->email ?>).</span>
+    </form>
+</section>
+<?
+include INC_UPDATE_INFO;
+endif;
+?>
+<?php /* crypt('password', "$2y$10$".bin2hex(openssl_random_pseudo_bytes(22))); */ ?>
+<? include INC_FOOTER ?>

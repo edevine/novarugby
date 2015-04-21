@@ -1,0 +1,2 @@
+[15-Feb-2015 13:31:56 America/Denver] PHP Notice:  Use of undefined constant INC_ABOUT_NAV - assumed 'INC_ABOUT_NAV' in /home1/devineej/public_html/novarugby/admin/index.html on line 4
+[15-Feb-2015 13:31:56 America/Denver] PHP Warning:  include(): Failed opening 'INC_ABOUT_NAV' for inclusion (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/devineej/public_html/novarugby/admin/index.html on line 4

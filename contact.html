@@ -1,3 +1,4 @@
+<? include INC_HEADER ?>
 <?
 $contacts = $db->query('select * from contacts order by `order` asc, name asc');
 ?>
@@ -14,3 +15,4 @@ $contacts = $db->query('select * from contacts order by `order` asc, name asc');
     </li>
     <? endwhile ?>
 </ul>
+<? include INC_FOOTER ?>

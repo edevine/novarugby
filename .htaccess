@@ -1,12 +1,16 @@
-php_value short_open_tag 1
-php_value auto_prepend_file inc/init.php
-php_value auto_append_file inc/footer.php
+# File modified on Fri Feb 21 13:50:36 2014 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value short_open_tag 1
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value auto_prepend_file inc/init.php
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value auto_append_file inc/footer.php
 
 #for development:
-AddHandler php5-script .html .php .rss
+#AddHandler php5-script .html .php .rss
 
 #for production:
-#AddHandler application/x-httpd-php54 .html .php .rss
+AddHandler application/x-httpd-php54 .html .php .rss
 
 DirectoryIndex news.html
 

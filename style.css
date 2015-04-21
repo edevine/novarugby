@@ -15,8 +15,49 @@ dt {
 p.center {
     text-align:center;
 }
-form p {
+form.centered p {
     text-align:center;
+}
+form.columns {
+    padding:5px;
+}
+form.columns p {
+    margin:10px auto;
+    width:430px;
+}
+form.columns .buttons {
+    text-align:center;
+}
+form.columns p>label {
+    display:inline-block;
+    vertical-align:top;
+    width:160px;
+}
+form.columns p>input {
+    width:250px;
+}
+form.columns select {
+    width:260px;
+}
+form.columns fieldset {
+    border:0;
+    margin:10px auto;
+    padding:0;
+    width:430px;
+}
+form.columns fieldset legend {
+    display:inline-block;
+    vertical-align:top;
+    width:160px;
+}
+form.columns fieldset ul {
+    display:inline-block;
+}
+form.columns fieldset label {
+    display:block;
+}
+button {
+    padding:5px 20px;
 }
 hr {
     border:1px solid #eee;
@@ -537,4 +578,7 @@ table.roster td {
     height:32px;
 }
 
+section.login-status button {
+    float:right;
+}
 

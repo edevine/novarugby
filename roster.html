@@ -1,5 +1,6 @@
+<? include INC_HEADER ?>
 <?
-$roster = $db->query("SELECT CONCAT(firstname, ' ', lastname) as name, position, height, weight, school FROM roster ORDER BY lastname ASC, firstname ASC");
+$roster = $db->query("SELECT name, position, height, weight, school FROM roster ORDER BY name ASC");
 ?>
 <header>
     <h1>Roster</h1>
@@ -16,3 +17,4 @@ $roster = $db->query("SELECT CONCAT(firstname, ' ', lastname) as name, position,
     </li>
 <? endwhile ?>
 </ul>
+<? include INC_FOOTER ?>

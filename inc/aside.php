@@ -14,9 +14,9 @@ $contacts = $db->query('select * from contacts where main = 1 order by `order` a
     <a class="twitter-timeline" width="320" height="400" data-dnt="true" href="https://twitter.com/NovaRugby" data-widget-id="430773984968187904">Tweets by @NovaRugby</a>
     <section class="contrast mailing-list">
         <h2>Mailing List</h2>
-        <form method="get" action="http://groups.yahoo.com/subscribe/novarugby" target="_blank">
+        <form class="centered" method="get" action="http://groups.yahoo.com/subscribe/novarugby" target="_blank">
             <p> <input type="text" name="user" size="30" placeholder="email@example.com">
-            <p> <button type="submit" style="width:110px;">Join the List</button>
+            <p> <button type="submit">Join the List</button>
         </form>
     </section>
     <section class="contacts">

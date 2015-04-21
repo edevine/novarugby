@@ -1,3 +1,4 @@
+<? include INC_HEADER ?>
 <?
 $schedule = $db->prepare("select * from games where season = ? order by date asc");
 $schedule->bindValue(1, 2015, PDO::PARAM_INT);
@@ -70,3 +71,4 @@ $schedule->execute();
         */ ?>
     </tbody>
 </table>
+<? include INC_FOOTER ?>

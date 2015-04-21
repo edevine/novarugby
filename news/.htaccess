@@ -1,5 +1,8 @@
-php_value auto_prepend_file ../inc/init.php
-php_value auto_append_file ../inc/footer.php
+# File modified on Fri Feb 21 14:00:47 2014 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value auto_prepend_file ../inc/init.php
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value auto_append_file ../inc/footer.php
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f

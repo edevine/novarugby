@@ -1,6 +1,9 @@
 <?
 // Place all sensitive information in _config.php
 // See config.EXAMPLE.php for format
+
+session_start();
+
 require 'config.php';
 
 define('INC', __DIR__ . '/');
@@ -12,6 +15,8 @@ define('INC_DUES', INC . 'dues.php');
 define('INC_FOOTER', INC . 'footer.php');
 define('INC_HEAD', INC . 'head.php');
 define('INC_HEADER', INC . 'header.php');
+define('INC_LOGIN', INC . 'login.php');
+define('INC_UPDATE_INFO', INC . 'update_roster_info.php');
 
 date_default_timezone_set('America/New_York');
 
@@ -40,6 +45,3 @@ function format_phone($int) {
         return '(' . $matches[1] . ') ' .$matches[2] . '-' . $matches[3];
     }
 }
-
-if ($EXT=='html')
-    include INC_HEADER;
